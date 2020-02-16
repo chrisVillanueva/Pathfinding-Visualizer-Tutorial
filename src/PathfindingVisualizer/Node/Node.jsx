@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import './Node.css';
-
 export default class Node extends Component {
   render() {
     const {
@@ -14,13 +12,14 @@ export default class Node extends Component {
       onMouseUp,
       row,
     } = this.props;
-    const extraClassName = isFinish
-      ? 'node-finish'
-      : isStart
-        ? 'node-start'
-        : isWall
-          ? 'node-wall'
-          : '';
+    const extraClassName =
+      isFinish
+        ? 'node-finish'
+        : isStart
+          ? 'node-start'
+          : isWall
+            ? 'node-wall'
+            : '';
 
     return (
       <div

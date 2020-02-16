@@ -17,37 +17,32 @@ import {
 
 import './PathfindingVisualizer.css';
 
-
 export default class PathfindingVisualizer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      grid: [],
-      mouseIsPressed: false,
-    };
-    this.handleMouseDown = this.handleMouseDown.bind(this);
-    this.handleMouseUp = this.handleMouseUp.bind(this);
-  }
+  state = {
+    grid: [],
+    mouseIsPressed: false,
+  };
 
   componentDidMount() {
     const grid = getInitialGrid();
     this.setState({ grid });
   }
 
-  handleMouseDown(e, row, col) {
+  handleMouseDown = (e, row, col) => {
     console.log("PathFindingVisualier hanldeMouseDown => ", { row, col });
     const newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
     this.setState({ grid: newGrid, mouseIsPressed: true });
   }
 
-  handleMouseEnter(row, col) {
-    //console.log("PathFindingVisualier hanldeMouseEnter => ", { row, col });
-    if (!this.state.mouseIsPressed) return;
-    const newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
-    this.setState({ grid: newGrid });
+  handleMouseEnter = (row, col) => {
+    const { mouseIsPressed, grid } = this.state;
+    if (!mouseIsPressed) return;
+    this.setState({
+      grid: getNewGridWithWallToggled(grid, row, col),
+    });
   }
 
-  handleMouseUp(e) {
+  handleMouseUp = (e) => {
     console.log("PathFindingVisualier hanldeMouseUp => ", e);
     this.setState({ mouseIsPressed: false });
   }
@@ -89,7 +84,6 @@ export default class PathfindingVisualizer extends Component {
 
   render() {
     const { grid, mouseIsPressed } = this.state;
-
     return (
       <div>
         {

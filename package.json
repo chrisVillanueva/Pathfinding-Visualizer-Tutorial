@@ -1,6 +1,7 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "pathfinding-visualizer-fork",
+  "version": "0.0.1",
+  "description": "Fork of ",
   "private": true,
   "dependencies": {
     "react": "^16.10.1",

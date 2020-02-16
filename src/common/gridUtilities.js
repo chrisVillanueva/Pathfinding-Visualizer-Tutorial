@@ -36,12 +36,10 @@ export const createNode = (col, row) => {
 };
 
 export const getNewGridWithWallToggled = (grid, row, col) => {
-    const newGrid = grid.slice();
-    const node = newGrid[row][col];
-    const newNode = {
-        ...node,
-        isWall: !node.isWall,
+    const nextGrid = [...grid];
+    nextGrid[row][col] = {
+        ...grid[row][col],
+        isWall: !grid[row][col].isWall
     };
-    newGrid[row][col] = newNode;
-    return newGrid;
+    return nextGrid;
 };
