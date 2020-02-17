@@ -7,20 +7,26 @@ export default class Node extends Component {
       isFinish,
       isStart,
       isWall,
+      dijkstraIsProcessing,
       onMouseDown,
       onMouseEnter,
       onMouseUp,
       row,
     } = this.props;
-    const extraClassName =
-      isFinish
-        ? 'node-finish'
-        : isStart
-          ? 'node-start'
-          : isWall
-            ? 'node-wall'
-            : '';
 
+    //=> refactor 
+    const extraClassName =
+      (dijkstraIsProcessing && isFinish)
+        ? 'node-pulse-finish'
+        : (dijkstraIsProcessing && isStart)
+          ? 'node-pulse-start'
+          : isFinish
+            ? 'node-finish'
+            : isStart
+              ? 'node-start'
+              : isWall
+                ? 'node-wall'
+                : '';
     return (
       <div
         id={`node-${row}-${col}`}

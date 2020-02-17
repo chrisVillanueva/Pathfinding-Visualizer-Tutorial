@@ -10,7 +10,7 @@
 }
 
 .node-start {
-  background-color: green;
+  background-color: green !important;
 }
 
 .node-visited {
@@ -77,3 +77,43 @@
     background-color: rgb(255, 254, 106);
   }
 }
+
+.node-pulse-start {
+  background-color: green;
+	border-radius: 50%;    
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;  
+}
+
+.node-pulse-finish,
+.node-shortest-path:last-child {
+  background-color: red;
+	border-radius: 50%;    
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;  
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    opacity: .5;
+	}
+
+	70% {
+		transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    opacity: .5;
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    opacity: .5;
+  }
+}
+
+
+
