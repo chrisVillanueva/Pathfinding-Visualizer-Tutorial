@@ -23,6 +23,8 @@ export function dijkstra(grid, startNode, finishNode) {
   }
 }
 
+// TODO:
+// optimize this sort for large grids
 function sortNodesByDistance(unvisitedNodes) {
   unvisitedNodes.sort(
     (nodeA, nodeB) =>
@@ -30,6 +32,10 @@ function sortNodesByDistance(unvisitedNodes) {
   );
 }
 
+// TODO:
+// optimize UnvisitedNeighbor functions.
+// do we need to process the entire grid
+// in each function?
 function updateUnvisitedNeighbors(node, grid) {
   const unvisitedNeighbors = getUnvisitedNeighbors(node, grid);
   for (const neighbor of unvisitedNeighbors) {
