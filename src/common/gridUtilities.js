@@ -1,3 +1,9 @@
+//NOTE:
+//underlying data structures (Grid, Node)
+//and functions to maipulate them are candidates
+//for redux selectors/actions
+
+
 import {
     MAX_COLS,
     MAX_ROWS,
