@@ -1,7 +1,7 @@
 {
   "name": "pathfinding-visualizer-fork",
   "version": "0.0.1",
-  "description": "Fork of ",
+  "description": "Forked Clement Mihailescu's Pathfinding-Visualizer-Tutorial.  My contribution includes React optimizations and additional algorithms. ",
   "private": true,
   "dependencies": {
     "react": "^16.10.1",
